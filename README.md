@@ -34,6 +34,6 @@ Honest collaboration is expected since the Uploader and the Voters must pay the 
 ### Demo
 We provide a possible user interface with a demo of the current frontend connected to the backend. 
 ![ui](images/ui.png)
-
+![demo](images/ddeemoo.gif)
 <b/>
 *Disclaimer: This project was built for the BETH Hackathon in just 2 days. Use in caution.* 
