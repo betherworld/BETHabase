@@ -8,7 +8,10 @@ contract Database
        string LastName;
        uint RepBalance;
     }
-
+   
+   //globally define the value of a single image
+   uint256 IMAGEVALUE = 10**12;
+   
    //assign adress to each member and put an array of member accounts
    //allows look up a specific instructor with their Ethereum address
    mapping (address => Members) members;
@@ -113,7 +116,7 @@ contract Database
    function createNewDatabaseRequest(string memory _name, uint _size) payable public {
 
        //Deposit a payment in ether which is later distributed upon completion to the uploader and voters
-       uint _ETHPerImg = (10**15);
+       uint _ETHPerImg = IMAGEVALUE;
        require(msg.value == _ETHPerImg*_size);
 
        RequestedDatabase memory request;
@@ -249,7 +252,7 @@ contract Database
           //Reward everyone in this list with a reputation token and ether.
           for (uint i =0; i < participants.length; i++){
                   members[participants[i]].RepBalance++;
-                  participants[i].transfer((10**15)/participants.length);
+                  participants[i].transfer(IMAGEVALUE/participants.length);
               }
 
           //deduct one reputation token for a false answer
